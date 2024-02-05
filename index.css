@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+.Main-Section{
+    height:100vh;
+    width:100%;
+    background-color: #dad4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Main-Wrapper{
+    max-height: 500px;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius:20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding:40px;
+    display: flex;
+    flex-direction: row;
+}
+.Main-Wrapper input[type=radio]{
+    opacity: 0;
+    position: absolute;
+}
+.Main-Wrapper .Labels{
+    position: relative;
+    padding:20px 0 0 0;
+    flex: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.Labels label{
+    cursor: pointer;
+}
+.Labels label:hover{
+    color:#6e50de;
+}
+.Labels .indicator{
+    position: absolute;
+    left: 0;
+    top: 16px;
+    height: 60px;
+    width: 100%;
+    border-radius: 12px;
+    background: #6d50e2;
+    transition: all 0.5s ease;
+}
+.Labels label{
+    padding:15px 15px 15px 0;
+    font-size: 20px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+.Labels label i{
+    padding-right:10px;
+    z-index: 1;
+}
+.Main-Wrapper .internal-data{
+    padding:40px 40px;
+    flex:70%;
+}
+.internal-data h1{
+    margin-bottom: 10px;
+}
+.internal-data p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+/*//////////////////Show Content  of Home ////////////////////////////*/
+.Home, .Blog, .Help, .Code, .About{
+    display: none;
+}
+.Main-Wrapper #Home:checked ~ .Home, 
+.Main-Wrapper #Blog:checked ~ .Blog,
+.Main-Wrapper #Help:checked ~ .Help,
+.Main-Wrapper #Code:checked ~ .Code,
+.Main-Wrapper #About:checked ~ .About{
+    display: block;
+}
+/*///////////////Change  Background Color of labels /////////////////////////////////////*/
+
+.Main-Wrapper #Home:checked ~ .Labels label[for="Home"], 
+.Main-Wrapper #Help:checked ~ .Labels [for="Help"],
+.Main-Wrapper #Code:checked ~ .Labels label[for="Code"],
+.Main-Wrapper #Blog:checked ~ .Labels label[for="Blog"],
+.Main-Wrapper #About:checked ~ .Labels label[for="About"]{
+    color:#fff;
+}
+/*//////////Moving indicator///////////////////*/
+.Main-Wrapper #Home:checked ~ .Labels .indicator{
+    top:15px;
+}
+.Main-Wrapper #Blog:checked ~ .Labels .indicator{
+    top:70px;
+}
+.Main-Wrapper #Help:checked ~ .Labels .indicator{
+    top:120px;
+}
+.Main-Wrapper #Code:checked ~ .Labels .indicator{
+    top:175px;
+}
+.Main-Wrapper #About:checked ~ .Labels .indicator{
+    top:230px;
+}
